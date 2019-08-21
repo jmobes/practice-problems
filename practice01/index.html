@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    function biggerWords(str1,arr) {
+      var strLen = str1.length;
+      var strLenArr = [];
+      var biggerWordsArr = [];
+      for(var i = 0; i < arr.length; i++) {
+        strLenArr[i] = arr[i].length;
+        if(strLenArr[i] > strLen) {
+          biggerWordsArr.push(arr[i])
+          console.log(biggerWordsArr.pop());
+        }
+      }
+    }
+    var words = [
+      "desk",
+      "chair",
+      "computer",
+      "monitor",
+      "mouse",
+      "phone",
+      "hand",
+      "ring"
+    ];
+    biggerWords("arms",words);
+
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
