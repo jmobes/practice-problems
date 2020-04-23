@@ -8,7 +8,15 @@ function sumArray(numArr){
 }
 
 function fitWithinVal(numArr, target){
-
+  let sum = 0;
+  let acceptedNums = [];
+  for(let i = 0; i < numArr.length; i++) {
+    if(sum + numArr[i] < target) {
+      sum += numArr[i];
+      acceptedNums.push(numArr[i]);
+    }
+  }
+  return acceptedNums;
 }
 
 function getAllNamesShorterThan(nameArr, nameTargetLength){
