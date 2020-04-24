@@ -37,5 +37,5 @@ function getMinMaxMean(numArray){
 }
 
 function findMode(numArr){
-  for(var inne)
+  let occurences;
 }
