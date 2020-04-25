@@ -36,6 +36,41 @@ function getMinMaxMean(numArray){
   return {min:minVal, max:maxVal, mean:average};
 }
 
-function findMode(numArr){
-  let occurences;
+function findMode(arr){
+  bubbleSort(arr);
+  let len = arr.length - 1;
+  let highestCount = 1;
+  let mode;
+  let count = 1;
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === arr[i+1]) {
+      count++;
+      if(count > highestCount) {
+        highestCount = count;
+        mode = arr[i];
+      }
+    }
+    else {
+      count = 1;
+    }
+  }
+  return mode;
+}
+
+function swap(arr,pos1,pos2) {
+  let temp = arr[pos1];
+  arr[pos1] = arr[pos2];
+  arr[pos2] = temp;
+}
+
+function bubbleSort(arr) {
+  let len = arr.length - 1;
+  for(let i = 0; i < arr.length; i++) {
+    for(let j = 0; j < arr.length; j++) {
+      if(arr[j] > arr[j+1]) {
+        swap(arr,j,j+1);
+      }
+    }
+    len--;
+  }
 }
