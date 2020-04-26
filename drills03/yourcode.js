@@ -28,9 +28,6 @@ function getPathParts(urlString){
   return parts;
 }
 
-// - getCapitalCount: given an array of words, return a count of how many start with capital letters, For
-//   - example: ['it', 'will', 'not', 'Be', 'long', 'Till', 'we', 'Are']
-//     - returns: 3
 function getCapitalCount(wordArr){
   let count = 0;
   for(let i = 0; i < wordArr.length; i++) {
@@ -41,8 +38,31 @@ function getCapitalCount(wordArr){
   return count;
 }
 
-function correctCalcChecker(){
-
+function correctCalcChecker(objArr){
+  let correct = [];
+  for(let i = 0; i < objArr.length; i++) {
+    if(objArr[i].op === "-") {
+      if(objArr[i].num1 - objArr[i].num2 === objArr[i].result) {
+        correct.push(objArr[i]);
+      }
+    }
+    else if (objArr[i].op === "+") {
+      if (objArr[i].num1 + objArr[i].num2 === objArr[i].result) {
+        correct.push(objArr[i]);
+      }
+    }
+    else if (objArr[i].op === "/") {
+      if (objArr[i].num1 / objArr[i].num2 === objArr[i].result) {
+        correct.push(objArr[i]);
+      }
+    }
+    else if (objArr[i].op === "*") {
+      if (objArr[i].num1 * objArr[i].num2 === objArr[i].result) {
+        correct.push(objArr[i]);
+      }
+    }
+  }
+  return correct;
 }
 
 function doMath(){
